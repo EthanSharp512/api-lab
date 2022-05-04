@@ -36,4 +36,10 @@ PART 2
     "date": "04 May 2022"
 }
 
-7. 
+7. https://practiceapi.devmountain.com/api/posts/filter?text=Blue
+
+8. content-type: application/json; charset=utf-8
+
+9. If request was missing req.query.id or req.body.text
+
+10. It return the entire list of all the objects, because A GET doesn't have a request body. GET isn't built to take in a query
