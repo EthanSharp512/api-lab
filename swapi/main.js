@@ -1,18 +1,20 @@
-const resBtn = document.querySelector('button');
-
-function logBtn() {
-    console.log("button clicked")
-    axios.get("https://swapi.dev/api/planets/2/")
-    .then((res) => {
-        let residents = res.data;
-        for (let i = 0; i < residents.length; i++) {
-            
-        }
-        console.log(res.data);
+function getResidents() {
+    axios.get('https://swapi.dev/api/planets/2')
+    .then(res => {
+      const {residents} = res.data
+  
+      residents.forEach(url => {
+        axios.get(url)
+        .then(res => {
+          console.log(res.data)
+  
+          let person = document.createElement('h2')
+          person.textContent = res.data.name
+  
+          document.querySelector('#resident-display').appendChild(person)
+        })
+      });
     })
-    .catch((err) => {
-        console.log(err);
-    })
-}
-
-resBtn.addEventListener("click", logBtn);
+  }
+  
+  document.getElementById('get-residents').addEventListener('click', getResidents)
