@@ -13,6 +13,7 @@ PART 1 SWAPI
 
 
 
+
 PART 2
 1. POST request accepts body and it is expecting an object 
 
@@ -43,3 +44,7 @@ PART 2
 9. If request was missing req.query.id or req.body.text
 
 10. It return the entire list of all the objects, because A GET doesn't have a request body. GET isn't built to take in a query
+
+
+
+PART 3.
